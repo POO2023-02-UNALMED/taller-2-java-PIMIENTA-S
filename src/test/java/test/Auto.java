@@ -3,7 +3,7 @@ package test;
 public class Auto {
     String modelo;
     int precio;
-    static Asiento[] asientos;
+    Asiento[] asientos;
     String marca;
     Motor motor;
     int registro;
@@ -21,7 +21,7 @@ public class Auto {
 
     String verificarIntegridad(){
         boolean estado = true;
-        if (motor.registro != registro){
+        if (registro != motor.registro){
             estado = false;
         }
         for (int i = 0; i < asientos.length; i++) {
