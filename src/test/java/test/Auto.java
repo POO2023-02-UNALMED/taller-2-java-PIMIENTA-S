@@ -18,18 +18,23 @@ public class Auto {
         }
         return totalAsientos;
     }
+
     String verificarIntegridad(){
-        if (registro == motor.registro){
-            for (Asiento asiento : asientos){
-                if (asiento != null ){
-                    if (asiento.registro != registro){
-                        return ("Las piezas no son originales");
-                    }
-                }
+        boolean estado = true;
+        if (motor.registro != registro){
+            estado = false;
+        }
+        for (Asiento asiento : asientos) {
+            if (asiento != null && asiento.registro != registro) {
+                    estado = false;
+                    break;
             }
-            return("Auto original");
+        }
+
+        if (estado){
+            return ("Auto original");
         } else {
-            return ("Las piezas no son originales");
+            return("Las piezas no son originales");
         }
     }
 }
