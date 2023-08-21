@@ -24,8 +24,8 @@ public class Auto {
         if (motor.registro != registro){
             estado = false;
         }
-        for (Asiento asiento : asientos) {
-            if (asiento != null && asiento.registro != registro) {
+        for (int i = 0; i < asientos.length; i++) {
+            if (asientos[i] != null && asientos[i].registro != registro) {
                     estado = false;
                     break;
             }
